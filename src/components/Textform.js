@@ -6,16 +6,15 @@ export default function Textform(props) {
 const [text, setText] = useState('Enter Text Here');
 
 const handleUpperCaseClick = () => {
-    console.log('Upper Case Button was clicked')
-    setText('Upper Case Button was clicked')
+    setText(text.toUpperCase());
 }
 
 const handleOnChange = (event) => {
-    console.log('Handle onChange method')
     setText(event.target.value)
 }
 
   return (
+    <>
     <div className='container my-3'>
         <div className="mb-3">
         <label htmlFor="exampleFormControlTextarea1" className="form-label">{props.title}</label>
@@ -23,5 +22,11 @@ const handleOnChange = (event) => {
         </div>
         <button className="btn btn-primary" onClick={handleUpperCaseClick}>Convert to Uppercase</button>
     </div>
+    <div className="container my-3">
+        <h3>Your Summary</h3>
+        <p>Total number of characters: {text.split(" ").length}</p>
+    </div>
+
+    </>
   )
 }
