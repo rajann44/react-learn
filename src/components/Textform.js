@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
 
-
-
 export default function Textform(props) {
 const [text, setText] = useState('Enter Text Here');
 
 const handleUpperCaseClick = () => {
     setText(text.toUpperCase());
+    props.alertMessage('Function Triggered:', 'Converted to Upper Case', 'primary')
 }
 
 const handleOnChange = (event) => {
