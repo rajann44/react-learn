@@ -15,16 +15,16 @@ const handleOnChange = (event) => {
 
   return (
     <>
-    <div className='container my-3'>
+    <div className='container my-3 rounded'  style={{backgroundColor: props.mode==='light'?'grey':'black'}}>
         <div className="mb-3">
-        <label htmlFor="exampleFormControlTextarea1" className="form-label">{props.title}</label>
-        <textarea className="form-control" value={text} onChange={handleOnChange} id="exampleFormControlTextarea1" rows="8"></textarea>
+        <label htmlFor="exampleFormControlTextarea1" className={`form-label text-${props.mode==='light'?'dark':'light'}`}>{props.title}</label>
+        <textarea className={`form-control bg-${props.mode==='light'?'light':'dark'} text-${props.mode==='light'?'dark':'light'}`} value={text} onChange={handleOnChange} id="exampleFormControlTextarea1" rows="8"></textarea>
         </div>
         <button className="btn btn-primary" onClick={handleUpperCaseClick}>Convert to Uppercase</button>
     </div>
     <div className="container my-3">
-        <h3>Your Summary</h3>
-        <p>Total number of characters: {text.split(" ").length}</p>
+        <h3 className={`form-label text-${props.mode==='light'?'dark':'light'}`}>Your Summary</h3>
+        <p className={`form-label text-${props.mode==='light'?'dark':'light'}`}>Total number of characters: {text.split(" ").length}</p>
     </div>
 
     </>
