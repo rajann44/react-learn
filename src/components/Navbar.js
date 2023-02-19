@@ -2,6 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
+
+  const showRed = () => {
+    document.body.style.backgroundColor = 'red';
+  }
+
+  const showYellow = () => {
+    document.body.style.backgroundColor = 'yellow';
+  }
+
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
     <div className="container-fluid">
@@ -18,6 +27,10 @@ export default function Navbar(props) {
             <a className="nav-link" href="#">About</a>
           </li>
         </ul>
+        <div className="btn-group mx-3" role="group" aria-label="Basic example">
+          <button type="button" onClick={showYellow} className="btn btn-warning">Yellow</button>
+          <button type="button" onClick={showRed} className="btn btn-danger">Red</button>
+        </div>
         <form className="d-flex" role="search">
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
           <button className="btn btn-outline-success" type="submit">Search</button>

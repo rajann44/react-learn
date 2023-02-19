@@ -7,25 +7,13 @@ import Textform from "./components/Textform";
 function App() {
 
   const[mode, setMode] = useState('light');
-
   const [alert, setAlert] = useState({ 
     text: 'No Action',
     subText: 'Do Something?',
     type: 'info'
    });
 
-  const showAlert = (passedText, passedSubText, passedType) => {
-    setAlert({
-      text: passedText,
-      subText: passedSubText,
-      type: passedType
-    })
-    setTimeout(() => {
-      setAlert(null)
-    }, 2500)
-  }
-
-  const toggleMode = () => {
+  const handleToggleMode = () => {
     if(mode === 'light'){
       setMode('dark')
       document.body.style.backgroundColor = '#0B243B';
@@ -37,9 +25,20 @@ function App() {
   }
   }
 
+  const showAlert = (passedText, passedSubText, passedType) => {
+    setAlert({
+      text: passedText,
+      subText: passedSubText,
+      type: passedType
+    })
+    setTimeout(() => {
+      setAlert(null)
+    }, 1500)
+  }
+
   return (
     <>
-    <Navbar title='Textutils' mode={mode} toggleMode={toggleMode}/>
+    <Navbar title='Textutils' mode={mode} toggleMode={handleToggleMode}/>
     <Alert alertMessage={alert} />
     <Textform alertMessage={showAlert} title='Enter your text here:' mode={mode}></Textform>
     <About/>
