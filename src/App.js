@@ -46,6 +46,7 @@ function App() {
     <Routes>
         <Route path="/cal" element={<Textform alertMessage={showAlert} title='Enter your text here:' mode={mode}></Textform>} />
         <Route path="/acc" element={<About/>} />
+        <Route path="/" element={<div text="Homepage"/>} />
     </Routes>
     </>
   );
