@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import About from "./components/About";
 import Alert from "./components/Alert";
 import Navbar from "./components/Navbar";
@@ -42,8 +43,11 @@ function App() {
     <>
     <Navbar title='Textutils' mode={mode} toggleMode={handleToggleMode}/>
     <Alert alertMessage={alert} />
-    <Textform alertMessage={showAlert} title='Enter your text here:' mode={mode}></Textform>
-    <About/>
+    <Routes>
+        <Route path="/cal" element={<Textform alertMessage={showAlert} title='Enter your text here:' mode={mode}></Textform>} />
+        <Route path="/acc" element={<About/>} />
+        <Route path="/" element={<div text="Homepage"/>} />
+    </Routes>
     </>
   );
 }
