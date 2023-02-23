@@ -18,10 +18,12 @@ function App() {
       setMode('dark')
       document.body.style.backgroundColor = '#0B243B';
       showAlert('Mode Changed:', 'Dark Mode Enabled', 'success')
+      document.title = "Dark Mode Enabled"
     }else{
     setMode('light')
     document.body.style.backgroundColor = 'white';
     showAlert('Mode Changed:', 'Light Mode Enabled', 'success')
+    document.title = "Light Mode Enabled"
   }
   }
 
